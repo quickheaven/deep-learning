@@ -152,7 +152,7 @@ prediction = prediction / 0.0000036968
 
 
 
-### Saving and loading models	
+#### Saving and loading models	
 To save the Keras model, we call model.save	and pass the file name. 
 \
 When we save the model, it save both the structure of the neural network and the trained weights that determine how the neural network works.
