@@ -111,7 +111,68 @@ loss function measures how right or how wrong your NN predictions
 
 ``` model.compile(optimizer='adam', loss='mse') ```
 	
+
 	
+### Training Models	
+
+#### Training and evaluating the model	
+Tell Keras how many training passes we want it to do over the training data during the training process. 	
+A single training pass across the training data set is called an epoch.
+
+If we do too few passes, the neural network wont make accurate predictions, but if we do too many it will waste time, and it might also cause over fitting problems.
+
+The best way to tune this is to try training the neural network and stop doing additional training passes when the network stops getting more accurate.
+	
+Shuffle the training data randomly. Neural network typicall train best when the data is shuffled. So we'll pass in shuffle equals to true.
+
+Verbose=2 - this simply tells Keras to print more detailed information during training so we can watch what's going on.
+```
+model.fit(X, Y, epochs=50, shuffle=True, verbose=2)
+```
+
+To measure the error rate of the testing data, we'll model.evaluate
+```
+test_error_rate = model.evaluate(X_test, Y_test, verbose=0)	
+```
+
+#### Making predictions
+
+```	
+# Make a prediction with the neural network
+prediction = model.predict(X)
+
+# Grab just the first element of the first prediction (since that's the only have one)
+prediction = prediction[0][0]
+
+# Re-scale the data from the 0-to-1 range back to dollars
+# These constants are from when the data was originally scaled down to the 0-to-1 range
+prediction = prediction + 0.1159
+prediction = prediction / 0.0000036968
+```	
+
+
+
+### Saving and loading models	
+To save the Keras model, we call model.save	and pass the file name. 
+\
+When we save the model, it save both the structure of the neural network and the trained weights that determine how the neural network works.
+\
+The reason we use the h5 extension is because data will be stored in the HDF Five format. \
+HDF Five format is a binary file format designed for storing Python array data. \
+The convention is to use h5 as the filename extension but it's not required. 
+
+```
+# Save the model to disk
+model.save("trained_model.h5")
+print("Model saved to disk.")
+```
+
+```
+from keras.models import load_model
+
+model = load_model("trained_model.h5")
+```
+
 	
 	
 	
