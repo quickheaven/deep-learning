@@ -173,6 +173,56 @@ from keras.models import load_model
 model = load_model("trained_model.h5")
 ```
 
+### Pre-Trained Models in Keras
+#### Pre-trained models
+
+
+#### Recognized images with RestNet50 model
+ImageNet
+A dataset of millions of labelled pictures
+Used to train image recognition models
+
+ILSVR - ImageNet Large Scale Visual Recognition Challenge
+Yearly image recognition competition
+
+There are four types of pre-trained image recognition models included with Keras
+* VGG (Visual Geometry Group at University of Oxford) - VGG is a Deep Neural network, with 16 or 19 layers. State of art from 2014 and still widely used today, but and takes a lot of memory to run.
+* ResNet50 (Microsoft Research) - State of the from 2015. Its a 50-layer neural network that manages to be more accurate with less memory but still use less memory that the VGG design.
+* Inception-v3 (Google) - is another design from 2015 that also performs very well.
+* Xception (Francois Chollet, author or Keras) - Xception, is an improve version of Incention-v3. More accurate than v3 while using the same amount of memory.
+
+```
+import numpy as np
+from keras.preprocessing import image
+from keras.applications import resnet50
+
+# Load Keras' ResNet50 model that was pre-trained against the ImageNet database
+model = resnet50.ResNet50()
+
+# Load the image file, resizing it to 224x224 pixels (required by this model)
+img = image.load_img("bay.jpg", target_size=(224, 224))
+
+# Convert the image to a numpy array
+x = image.img_to_array(img)
+
+# Add a forth dimension since Keras expects a list of images
+x = np.expand_dims(x, axis=0)
+
+# Scale the input image to the range used in the trained network
+x = resnet50.preprocess_input(x)
+
+# Run the image through the deep neural network to make a prediction
+predictions = model.predict(x)
+
+# Look up the names of the predicted classes. Index zero is the results for the first image.
+predicted_classes = resnet50.decode_predictions(predictions, top=9)
+
+print("This is an image of:")
+
+for imagenet_id, name, likelihood in predicted_classes[0]:
+    print(" - {}: {:2f} likelihood".format(name, likelihood))
+```
+
 	
 	
 	
