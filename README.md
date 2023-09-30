@@ -110,7 +110,7 @@ optimizer algo is the algo used to train your neural network
 loss function measures how right or how wrong your NN predictions
 
 ``` model.compile(optimizer='adam', loss='mse') ```
-
+	
 
 	
 ### Training Models	
@@ -221,7 +221,6 @@ print("This is an image of:")
 
 for imagenet_id, name, likelihood in predicted_classes[0]:
     print(" - {}: {:2f} likelihood".format(name, likelihood))
-
 ```
 
 ### Monitoring a Keras model with TensorBoard
@@ -267,6 +266,18 @@ logger = keras.callbacks.TensorBoard(
     write_graph=True
 )
 ```	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
