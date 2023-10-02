@@ -1,4 +1,4 @@
-# Deep Learning
+# Building Deep Learning Applications with Keras
 **Keras** - a high level framework for building neural network
 Keras build the backend using TensorFlow or Theano
 Keras is a front-end layer
