@@ -1,7 +1,7 @@
 # Building Deep Learning Applications with Keras
 **Keras** - a high level framework for building neural network
 Keras build the backend using TensorFlow or Theano
-Keras is a front-end layer
+Keras is a front-end layer \
 **Theano** - Created at MILA (Montreal Institute for Learning Algorithms) at the University of Montreal. \
 **TensorFlow** - Created at Google.
 
@@ -266,7 +266,92 @@ logger = keras.callbacks.TensorBoard(
     write_graph=True
 )
 ```	
-	
+
+
+# Deep Learning: Model Optimization and Tuning
+
+## Introduction to Deep Learning Optimization
+
+#### What is an Artificial Neural Network(ANN)?
+* Artificial Neural Network is a network of perceptrons modeled after the human brain
+* Percentrons are called *nodes* in the neural network
+* Nodes are organized into layers
+* A deep neural neural network usually have 3 or more layers
+* Each nodes has its own weights, biases, and activation functions
+* Each node is connected to all nodes in the next year forming a Dense network
+
+#### ANN Model
+**Parameters**
+* Weights
+* Biases
+
+**Hyperparameters**
+* Number of layers, nodes in each layer, activation functions
+* Cost functions, learning rate, optimizers
+* Batch size, epoch
+
+#### Optimizing for Inference
+**Better accuracy**
+* Higher model metrics (like F1)
+* Avoid variance and biases
+
+**Lower costs**
+* Smaller model sizes
+* Minimal inference latency
+* Lower CPU, memory, and disk requirements
+
+*Balance accuracy and cost
+Note requirements for better accuracy and lower cost conflict each other.
+Better accuracy would usually mean higher cost. So a balance needs to be achieved.*
+
+#### Optimizing for Training
+**Time to train**
+* Lower iterations and experiments
+
+** Avoid training pitfalls
+* Vanishing gradients
+* Exploding gradients
+* Overfitting
+
+#### The Tuning process
+**Preparing for Tuning**
+**Set clear goals**
+* Accuracy vs. efficiency \
+**Select and prepare training data**
+
+#### Tuning Layers
+**Network architecture**
+* Layers, nodes, weights
+* Activation functions
+
+**Training Parameters**
+* Epochs and batches
+* Normalization and regularization
+* Optimizers
+
+#### Tuning Experiments
+Choose one lever at a time
+* Use your understanding and experience to determime the set of values to experiment with
+* Run experiments with the same data / environment and log results
+* Compare and select the best option /values
+Combine multiple levers and select best options \
+Validate with multiple independent datasets for stability
+
+#### Things to Remember
+* No one size fits all
+* The best value for a hyper parameter depends on your specific use case and input data
+* Experiment, experiment, experiment
+
+## Tuning the Deep Learning Network
+
+## Tuning Back Propagation
+
+## Over fitting Management
+
+## Model Tuning Exercise
+
+## Conclusion
+
 	
 	
 	
