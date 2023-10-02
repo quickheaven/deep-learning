@@ -308,16 +308,15 @@ Better accuracy would usually mean higher cost. So a balance needs to be achieve
 **Time to train**
 * Lower iterations and experiments
 
-** Avoid training pitfalls
+**Avoid training pitfalls**
 * Vanishing gradients
 * Exploding gradients
 * Overfitting
 
 #### The Tuning process
-**Preparing for Tuning**
-**Set clear goals**
-* Accuracy vs. efficiency \
-**Select and prepare training data**
+* Preparing for Tuning
+* Set clear goals (Accuracy vs. efficiency)
+* Select and prepare training data
 
 #### Tuning Layers
 **Network architecture**
