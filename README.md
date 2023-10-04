@@ -347,8 +347,6 @@ Validate with multiple independent datasets for stability
 
 ## Over fitting Management
 
-## Model Tuning Exercise
-
 ## Conclusion
 
 	
