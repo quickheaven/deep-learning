@@ -342,6 +342,26 @@ Validate with multiple independent datasets for stability
 * Experiment, experiment, experiment
 
 ## Tuning the Deep Learning Network
+### Epoch and batch size tuning
+
+#### Batch Size
+**A set of samples sent through ANN in a single pass**
+**Higher the batch size**
+* Better GPU utilization
+* Lower number of training iterations
+* Instability during training progress
+* **Recommendation**
+  Experiment for the right size, batch size of 32 found most optimal for most use cases.
+
+
+#### Epochs
+* The number of times the entire training set is passed through the network
+* Controls only training, not inference
+* As epochs increase, the gains would taper off as the model gains accuracy. An increase in accuracy can trigger instability beyond certain point.
+* **Recommendation**
+  Choose the earliest value when accuracy stabilizers.
+
+#### Recommendation is to figure out the right number of batches and epochs first, and then use that for further experimentation.
 
 ## Tuning Back Propagation
 
