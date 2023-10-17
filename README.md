@@ -474,7 +474,34 @@ Works in conjunction with the optimizer
 ### Learning Rate Experiment
 
 
-## Over fitting Management
+## Overfitting Management
+
+A model will perform with very high accuracy when predicting against the training samples but when predicting against with independent data samples, the accuracy levels would be low.
+
+Neural Network have a tendency to overfit when the models are too deep and have more than the required number of nodes.
+
+### Overfitting in ANN
+
+#### Overfitting: Solutions
+* Simple models - reduce layers and nodes in a layer
+* Smaller epochs and batches during training
+* Increase training data size and variety
+* Balance Data
+* Regularization
+* Dropouts
+
+### Regularization
+* Controls overfitting during model training
+* An adjustment to the model parameters to prevent them from overfitting.
+* Reduces variance in the model
+* Multiple options available L1, L2 and (L1 and L2 combined)
+
+### Dropouts
+* Dropouts work during forward propagation
+* A given percent of modes are dropped randomly
+* Dropping nodes randomly tends to result in focusing on feature values that have high influence on the outcomes.
+* Dropouts can also negatively impact the model if it drop relevant nodes that model important features.
+* Try dropouts if there is symptoms of over fitting.
 
 	
 	
