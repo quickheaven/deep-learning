@@ -414,7 +414,6 @@ In model summary, the changing of activation functions do not change the number 
 
 *(Choose activation function with high accuracy)*
 
-
 ### Initialize Weights
 The initial values of weights play a huge role in the speed of learning and finaly accuracy.
 Multiple initialization techniques exist.
@@ -429,6 +428,51 @@ Multiple initialization techniques exist.
 *(Choose weight with high accuracy)*
 
 ## Tuning Back Propagation
+### Vanishing and exploding gradients
+The deltas computed should be of the right size for gradual descent.
+
+**Delta is Too smaller**
+* Decay, no changes in weight. (vanishing gradient)
+
+**Delta is Too big**
+* Significant change in weight. Choppy learning with no descent (exploding gradients)
+
+**Solutions**
+* Weight initialization
+* Activation functions
+* Batch Normalization
+
+### Batch Normalization
+* Normalize the inputs before each hidden layers
+* Center and scale (StandardScaler)
+* Normalizes the inputs to be of the same scale
+* Helps attain higher accuracies with lower epochs
+* Additional computations and increased inference times
+
+Add batch normalization as a layer between hidden layers.
+
+```models.add(keras.layers.BatchNormalization())```
+
+### Optimizers
+
+Help speed up the training process
+Introduced during back propagation, it will adjust the values each step, such as that it prevents vanishing and exploding descent while inching the parameter adjustments closer to desired states.
+
+### Learning Rate
+Learning rate is the rate at which the weights will change in response to the estimated error.
+Works in conjunction with the optimizer
+
+#### Learning Rate Selection
+**Larger value**
+* Faster learning with fewer epoch. - It will adjust the values too fast.
+* Risk of exploding gradients. - The big adjustment to the weights, will cause the gradient to be choppy
+
+**Lower value**
+* Slower but steady learning
+* Risk of vanishing gradients
+
+### Learning Rate Experiment
+
 
 ## Over fitting Management
 
