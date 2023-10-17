@@ -363,6 +363,67 @@ Validate with multiple independent datasets for stability
 
 #### Recommendation is to figure out the right number of batches and epochs first, and then use that for further experimentation.
 
+
+### Epoch and batch size experiment
+
+* Looking on the Epochs, we see that for lower Epochs the accuracy starts at low value, but increase and stabilizes after a few Epochs. The value which the stabilization happens will vary based on the specific use case. 
+* Batch size, for lower batch size the accuracy starts with at a much higher range. This is because there is more iterations within the Epoch for smaller Batch sizes. The accuracy stabilizes as the Epochs progress.* 
+ 
+ 
+### Hidden layers tuning
+One of the key model architecture hyperparameters is the number of hidden layers.
+As the number of layers increases, it increases the possibility of learning complex relationships between features and target variables, but it will also increase the cost and time needed for both training and inference.  It is also has the risk of overfitting the training set.
+
+**Recommendation**
+* A value of two has been sufficient for simple problems.
+* It is recommended to increase the number of layers only based on experimentation if the set accuracy levels are not achieved. Otherwise, additional layers will take resources and time without providing any additional value.
+*Also look for stability using plot when comparing the number of hidden layers.*
+
+### Determining nodes in a layers
+**More Nodes**
+* Possibility to learn complex relationships
+* More training and inference cost and time
+* Overfitting training set
+
+**Recommendation**
+* Between number of input and output nodes
+* Increase based on experimentation. Start with a low value like 32 and increase based on experimentation.
+As the number of nodes increase, there is a general tendency to increase in accuracy owing to more patterns being captured by additional nodes.
+*(Choose the number of nodes with high accuracy)*
+
+
+### Choosing activation functions
+Activation functions are useful for both hidden layers and output layers.
+The activation function for hidden layers depends upon the choice of problem and network architecture. 
+The choice can also impact the stability and speed of gradient descent.
+
+**Recommendation**
+* ReLU (Rectified Linear Unit) works best for ANN and CNN;
+* sigmoid for RNN.
+
+**Activation: Output Layer**
+The activation function choice depends upon the type of machine learning problem. 
+* Binary classification - sigmoid
+* Multi-class classification - softmax
+* Regression - linear
+In model summary, the changing of activation functions do not change the number of parameters. It actually impacts the values that are created inside them.
+
+*(Choose activation function with high accuracy)*
+
+
+### Initialize Weights
+The initial values of weights play a huge role in the speed of learning and finaly accuracy.
+Multiple initialization techniques exist.
+| Initialization Technique | Initialization To |
+| --- | --- |
+| Random Normal  | Random values from a standard normal distribution |
+| Zeros | All zeros |
+| Ones | All ones |
+| Random uniform | Random uniform distribution |
+
+**Recommendation:** Random normal works best for most cases
+*(Choose weight with high accuracy)*
+
 ## Tuning Back Propagation
 
 ## Over fitting Management
