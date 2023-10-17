@@ -368,7 +368,11 @@ Validate with multiple independent datasets for stability
 
 * Looking on the Epochs, we see that for lower Epochs the accuracy starts at low value, but increase and stabilizes after a few Epochs. The value which the stabilization happens will vary based on the specific use case. 
 * Batch size, for lower batch size the accuracy starts with at a much higher range. This is because there is more iterations within the Epoch for smaller Batch sizes. The accuracy stabilizes as the Epochs progress.* 
- 
+
+```
+model_config["EPOCH"]=20
+model_config["BATCH_SIZE"] =  batch_size
+```
  
 ### Hidden layers tuning
 One of the key model architecture hyperparameters is the number of hidden layers.
